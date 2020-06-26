@@ -29,13 +29,12 @@ repositories {
 }
 
 
-/*def ENV = System.getenv()
+def ENV = System.getenv()
 if (ENV.BUILD_NUMBER) {
     version = "1.1.3.5-" + "${System.getenv().BUILD_NUMBER}"
 } else {
-
-}*/
-version = "1.1.3.5"
+    version = "1.1.3.5"
+}
 group = 'ic2'
 archivesBaseName = "IC2Classic"
 
@@ -54,6 +53,10 @@ task srcJar(type: Jar) {
 task deobfJar(type: Jar) {
     from sourceSets.main.output
     classifier = 'dev'
+}
+
+jar {
+    classifier = 'universal'
 }
 
 task apiJar(type: Jar) {
