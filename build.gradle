@@ -55,10 +55,6 @@ task deobfJar(type: Jar) {
     classifier = 'dev'
 }
 
-jar {
-    classifier = 'universal'
-}
-
 task apiJar(type: Jar) {
     from sourceSets.main.allSource
     from sourceSets.main.output
